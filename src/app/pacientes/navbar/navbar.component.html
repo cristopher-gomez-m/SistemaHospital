@@ -1,0 +1,11 @@
+<mat-toolbar color="primary">
+    <span><mat-icon>local_hospital</mat-icon></span>
+    <span class="example-spacer"></span>
+    <button mat-button routerLink="/pacientes">Agendar Cita</button>
+    <button mat-button routerLink="/pacientes/citas">Mis Citas</button>
+    <button mat-button routerLink="/pacientes/historial">Historial Clínico</button>
+
+    <button mat-icon-button class="example-icon"  aria-label="Example icon-button with menu icon" (click)="onLogout()">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>

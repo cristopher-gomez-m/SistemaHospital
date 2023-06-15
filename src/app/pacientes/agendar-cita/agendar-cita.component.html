@@ -1,0 +1,38 @@
+<div class="body">
+
+    <div class="login">
+      <form [formGroup]="validateFrm" (ngSubmit)="submitForm()">
+        <h1 class="h3 mb-3 fw-normal">Agendar Cita</h1>
+        <mat-form-field class="ancho"  appearance="fill">
+          <mat-label>Seleccione un consultorio</mat-label>
+          <mat-select formControlName="especialidad">
+            <mat-option *ngFor="let consultorio of consultorios" [value]="consultorio.id">
+              {{consultorio.especialidad}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="validateFrm.get('especialidad')?.hasError('required')">
+            La especialidad es requerida
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field class="ancho"  appearance="fill">
+          <mat-label>Seleccione una fecha</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fecha" >
+          <mat-hint>MM/DD/YYYY</mat-hint>
+          <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+        <mat-form-field class="ancho"  appearance="fill">
+          <mat-label>Seleccione un horario</mat-label>
+          <mat-select formControlName="hora">
+            <mat-option *ngFor="let horario of horarios" [value]="horario.value">
+              {{horario.viewValue}}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="validateFrm.get('hora')?.hasError('required')">
+            El horario es requerido
+          </mat-error>
+        </mat-form-field>
+          <button  class="ancho" mat-raised-button mat-button color="primary">Agendar Cita</button>
+        </form>
+    </div>
+</div>

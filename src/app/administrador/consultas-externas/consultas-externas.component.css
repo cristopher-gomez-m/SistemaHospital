@@ -1,0 +1,28 @@
+mat-tab-group {
+    margin: 20px; /* margen exterior */
+  }
+  
+  mat-tab-group mat-tab {
+    padding: 10px; /* margen interior */
+  }
+
+  /* Structure */
+table {
+  width: 90%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.add-button {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}

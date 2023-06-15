@@ -1,0 +1,49 @@
+<div class="body">
+  <div class="login">
+    <form [formGroup]="validateFrm" (ngSubmit)="submitForm()">
+      <img src="./assets/img/medico.png" alt="" width="50%" height="80%" />
+      <h1 class="h3 mb-3 fw-normal">Login</h1>
+      <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email" />
+        <mat-error
+          *ngIf="
+          validateFrm.get('email')?.hasError('email') &&
+            !validateFrm.get('email')?.hasError('required')
+          "
+        >
+          Ingrese un email valido
+        </mat-error>
+        <mat-error *ngIf="validateFrm.get('email')?.hasError('required')">
+          El Email es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="ancho" appearance="fill">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="password" />
+        <mat-error *ngIf="validateFrm.get('password')?.hasError('required')">
+          La contraseña es <strong>requerido</strong>
+        </mat-error>
+      </mat-form-field>
+
+      <button
+        class="custom-button"
+        mat-raised-button
+        mat-button
+        color="primary"
+      >
+        Ingresar
+      </button>
+      <button
+        (click)="registrar()"
+        class="custom-button"
+        mat-raised-button
+        mat-button
+        color="primary"
+      >
+        Registrarse
+      </button>
+    </form>
+  </div>
+</div>

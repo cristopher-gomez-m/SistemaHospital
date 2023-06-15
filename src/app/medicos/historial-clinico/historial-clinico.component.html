@@ -1,0 +1,141 @@
+<h1 class="titulo">Historial Clínico</h1>
+<form [formGroup]="enfermedades" (ngSubmit)="submitForm()">  
+<div class="example-form">
+    
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Nombre</mat-label>
+            <input matInput formControlName="nombre">
+            <mat-error *ngIf="enfermedades.get('nombre')?.hasError('required')">
+                El nombre es requerido
+              </mat-error>
+        </mat-form-field>
+    </div>
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Apellido</mat-label>
+            <input matInput formControlName="apellido">
+            <mat-error *ngIf="enfermedades.get('apellido')?.hasError('required')">
+                El apellido es requerido
+              </mat-error>
+        </mat-form-field>
+    </div>
+</div>
+<div class="example-form">
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Edad</mat-label>
+            <input matInput formControlName="edad">
+        </mat-form-field>
+    </div>
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Altura</mat-label>
+            <input matInput formControlName="altura">
+        </mat-form-field>
+    </div>
+</div>
+<div class="example-form">
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Peso</mat-label>
+            <input matInput formControlName="peso">
+        </mat-form-field>
+    </div>
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Masa Corporal</mat-label>
+            <input matInput formControlName="masa_corporal">
+        </mat-form-field>
+    </div>
+</div>
+<div class="example-form">
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Temperatura</mat-label>
+            <input matInput formControlName="temperatura">
+        </mat-form-field>
+    </div>
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Frecuencia Respiratoria</mat-label>
+            <input matInput formControlName="frecuencia_respiratoria">
+        </mat-form-field>
+    </div>
+</div>
+<div class="example-form">
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Presión Arterial</mat-label>
+            <input matInput formControlName="presion_arterial">
+        </mat-form-field>
+    </div>
+    <div class="example-field">
+        <mat-form-field class="example-full-width">
+            <mat-label>Frecuencia Cardíaca</mat-label>
+            <input matInput formControlName="frecuencia_cardiaca">
+        </mat-form-field>
+    </div>
+</div>
+
+<h3 class="titulo2">¿Has sufrido alguna de estas enfermedades?</h3>
+
+<div class="mensaje-container">
+    <div class="radiobutton-container" class="example-section">
+        <p><mat-checkbox formControlName="diabetes">Diabetes</mat-checkbox></p>
+        <p><mat-checkbox formControlName="tiroideas">Enfermedades Tiroideas</mat-checkbox></p>
+        <p><mat-checkbox formControlName="hipertension">Hipertensión Arterial</mat-checkbox></p>
+        <p><mat-checkbox formControlName="cardiopatia">Cardiopatías</mat-checkbox></p>
+        <p><mat-checkbox formControlName="traumatismo">Traumatismos</mat-checkbox></p>
+        <p><mat-checkbox formControlName="cancer">Cancer</mat-checkbox></p>
+        <p><mat-checkbox formControlName="otros">Otros</mat-checkbox></p>
+    </div>
+
+    <div class="mensaje-input-container">
+        <div class="textbox-container">
+            <input type="text" class="textbox1" placeholder="Escribe aquí..." formControlName="diabetes_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="tiroideas_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="hipertension_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="cardiopatia_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="traumatismo_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="cancer_descripcion">
+        </div>
+        <div class="textbox-container">
+            <input type="text" class="textbox" placeholder="Escribe aquí..." formControlName="otros_descripcion">
+        </div>
+    </div>
+</div>
+
+<h3 class="titulo2">Diagnóstico</h3>
+<div class="container">
+    <form class="example-form2">
+        <mat-form-field class="example2">
+            <mat-label></mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<h3 class="titulo2">Medicamentos</h3>
+
+<div class="container">
+    <form class="example-form2">
+        <mat-form-field class="example2">
+            <mat-label></mat-label>
+            <textarea matInput></textarea>
+        </mat-form-field>
+    </form>
+</div>
+
+<button class="custom-button" mat-raised-button mat-button color="primary">Guardar</button>
+</form>

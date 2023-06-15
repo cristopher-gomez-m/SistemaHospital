@@ -1,0 +1,40 @@
+
+<h2 class="titulo">Citas Agendadas</h2>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="turno">
+      <th mat-header-cell *matHeaderCellDef> No. Turno </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="consultorio">
+      <th mat-header-cell *matHeaderCellDef> Consultorio </th>
+      <td mat-cell *matCellDef="let element">
+        <ng-container *ngFor="let consultorio of element.consultorios">
+          {{ consultorio.especialidad }}
+          <br>
+        </ng-container>
+      </td>
+    </ng-container>
+    
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="fecha">
+      <th mat-header-cell *matHeaderCellDef> Fecha </th>
+      <td mat-cell *matCellDef="let element"> {{ element.fecha }} </td>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="horario">
+      <th mat-header-cell *matHeaderCellDef> Horario </th>
+      <td mat-cell *matCellDef="let element"> {{element.hora}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>

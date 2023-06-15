@@ -1,0 +1,49 @@
+<p>agregar-consultorio works!</p>
+<div class="body">
+  <div class="login">
+    <form [formGroup]="validateFrm" (ngSubmit)="submitForm()">
+      <div class="">
+        <mat-form-field class="ancho margin-bottom" appearance="fill">
+          <mat-label>Especialidad</mat-label>
+          <input matInput formControlName="especialidad" />
+          <mat-error
+            *ngIf="validateFrm.get('especialidad')?.hasError('required')"
+          >
+            La especialidad es requerida
+          </mat-error>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Seleccionar medico</mat-label>
+          <mat-select formControlName="medico_id">
+            <mat-option *ngFor="let opcion of opcionesMedicos" [value]="opcion.id">
+              {{ opcion.label }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="validateFrm.get('medico_id')?.hasError('required')">
+            La especialidad es requerida
+          </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="button-row">
+        <button
+          class="custom-button"
+          mat-raised-button
+          mat-button
+          color="primary"
+        >
+          Agregar
+        </button>
+        <button
+          (click)="regresar()"
+          class="custom-button"
+          mat-raised-button
+          mat-button
+          color="primary"
+        >
+          Regresar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+

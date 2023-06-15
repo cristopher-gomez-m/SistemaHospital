@@ -1,0 +1,170 @@
+<form [formGroup]="enfermedades">
+  <div class="container">
+    <div class="parent">
+      <div class="div1">
+        <h3 class="titulo">Datos</h3>
+        <div class="input-wrapper">
+          <h4>Nombre:</h4>
+          <input type="text" class="minimal-input" formControlName="nombre" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Apellido:</h4>
+          <input type="text" class="minimal-input" formControlName="apellido" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Edad:</h4>
+          <input type="text" class="minimal-input" formControlName="edad" readonly />
+        </div>
+        <h3 class="titulo">Últimos signos vitales</h3>
+        <div class="input-wrapper">
+          <h4>Altura:</h4>
+          <input type="text" class="minimal-input" formControlName="altura" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Peso:</h4>
+          <input type="text" class="minimal-input" formControlName="peso" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Masa Corporal:</h4>
+          <input type="text" class="minimal-input" formControlName="masa_corporal" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Temperatura:</h4>
+          <input type="text" class="minimal-input"  formControlName="temperatura" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Frecuencia respiratoria:</h4>
+          <input type="text" class="minimal-input" formControlName="frecuencia_respiratoria" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Presión arterial:</h4>
+          <input type="text" class="minimal-input" formControlName="presion_arterial" readonly />
+        </div>
+        <div class="input-wrapper">
+          <h4>Frecuencia arterial:</h4>
+          <input type="text" class="minimal-input" formControlName="frecuencia_cardiaca" readonly />
+        </div>
+      </div>
+
+      <div class="div2">
+        <h3 class="titulo">Antecedentes patológicos</h3>
+        <div class="mensaje-container">
+          <div
+            class="radiobutton-container"
+            class="example-section"
+          >
+            <p>
+              <mat-checkbox type="checkbox" formControlName="diabetes"
+                >Diabetes</mat-checkbox
+              >
+            </p>
+            <p>
+              <mat-checkbox formControlName="tiroideas"
+                >Enfermedades Tiroideas</mat-checkbox
+              >
+            </p>
+            <p>
+              <mat-checkbox formControlName="hipertension"
+                >Hipertensión Arterial</mat-checkbox
+              >
+            </p>
+            <p>
+              <mat-checkbox formControlName="cardiopatia"
+                >Cardiopatías</mat-checkbox
+              >
+            </p>
+            <p>
+              <mat-checkbox formControlName="traumatismo"
+                >Traumatismos</mat-checkbox
+              >
+            </p>
+            <p><mat-checkbox formControlName="cancer">Cancer</mat-checkbox></p>
+            <p><mat-checkbox formControlName="otros">Otros</mat-checkbox></p>
+          </div>
+
+          <div class="mensaje-input-container">
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox1"
+                placeholder="Detalles"
+                formControlName="diabetes_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="tiroideas_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="hipertension_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="cardiopatia_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="traumatismo_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="cancer_descripcion"
+                readonly
+              />
+            </div>
+            <div class="textbox-container">
+              <input
+                type="text"
+                class="textbox"
+                placeholder="Detalles"
+                formControlName="otros_descripcion"
+                readonly
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="div3">
+        <h3 class="titulo">Última cita agendada</h3>
+        <div class="input-wrapper">
+          <h4>Consultorio:</h4>
+          <input type="text" class="minimal-input" readonly formControlName="especialidad"/>
+        </div>
+        <div class="input-wrapper">
+          <h4>Fecha:</h4>
+          <input type="text" class="minimal-input" readonly formControlName="fecha"/>
+        </div>
+        <div class="input-wrapper">
+          <h4>Horario:</h4>
+          <input type="text" class="minimal-input" readonly formControlName="hora"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
